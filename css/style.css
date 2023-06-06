@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.6rem;
+}
+
+.burger-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1.6em;
+  z-index: 10;
+}
+
+.hide {
+  display: none;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../assets/home/background-home-mobile.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.85);
+  overflow-x: hidden;
+}
+.header .nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 69%;
+  transform: translateX(100%);
+  -webkit-backdrop-filter: blur(50px) drop-shadow(30px 10px 4px #404044);
+          backdrop-filter: blur(50px) drop-shadow(30px 10px 4px #404044);
+  transition: transform 0.5s;
+  z-index: 5;
+}
+.header .nav--active {
+  transform: translateX(0);
+}
+.header .nav__list {
+  list-style: none;
+  text-transform: uppercase;
+  margin-top: 5em;
+}
+.header .nav__item {
+  padding: 1em 3em;
+}
+.header .nav__link {
+  font-size: 2rem;
+  text-decoration: none;
+  letter-spacing: 2.7px;
+  color: rgb(255, 255, 255);
+}
+.header__logo {
+  position: fixed;
+  top: 1.3em;
+  left: 1.3em;
+  width: 40px;
+  height: 40px;
+}
+.header__box {
+  position: relative;
+  padding: 5.9em 1.5em 1em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+}
+.header__heading-small {
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+  color: rgb(208, 214, 249);
+}
+.header__heading-main {
+  padding: 0.2em 0;
+  font-family: "Bellefair", serif;
+  font-size: 8rem;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 100px;
+}
+.header__text {
+  font-family: "Barlow", sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 25px;
+  color: rgb(208, 214, 249);
+}
+.header__explore {
+  position: relative;
+  margin-top: 3.2em;
+  width: 150px;
+  height: 150px;
+  border: solid 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  background: rgb(255, 255, 255);
+  transition: box-shadow 0.3s;
+  z-index: 2;
+}
+.header__crew {
+  background-image: url(../assets/crew/background-crew-mobile.jpg);
+  filter: brightness(1);
+}
+.header__crew::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 13, 23, 0.7);
+  z-index: 0;
+}
+.header__crew-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 1.5em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+}
+.header__crew-title {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+}
+.header__crew-hero {
+  width: 100%;
+  border-bottom: 1px solid #383b4b;
+  margin-bottom: 2em;
+}
+.header__crew-img {
+  margin-left: 2em;
+  width: 100%;
+  height: auto;
+  max-width: 178px;
+  max-height: 222px;
+}
+.header__crew-btnbox {
+  margin-bottom: 1em;
+}
+.header__crew-btn {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin: 0 0.5em;
+  background-color: rgba(255, 255, 255, 0.17);
+}
+.header__crew-btn--active {
+  background-color: rgb(255, 255, 255);
+}
+.header__crew-head {
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+}
+.header__crew-job {
+  margin-top: 1em;
+  color: rgba(255, 255, 255, 0.495);
+}
+.header__crew-name {
+  padding: 0.5em 0 1em;
+  font-size: 2.4rem;
+  font-weight: normal;
+}
+.header__crew-text {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.5rem;
+  line-height: 25px;
+  color: rgb(208, 214, 249);
+}/*# sourceMappingURL=style.css.map */
