@@ -57,6 +57,11 @@ body {
   right: 0;
   padding: 1.6em;
   z-index: 10;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.burger-btn:hover {
+  transform: scale(1.15);
 }
 
 .hide {
@@ -68,7 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../assets/home/background-home-mobile.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -83,8 +88,8 @@ body {
   height: 100vh;
   width: 69%;
   transform: translateX(100%);
-  -webkit-backdrop-filter: blur(50px) drop-shadow(30px 10px 4px #404044);
-          backdrop-filter: blur(50px) drop-shadow(30px 10px 4px #404044);
+  -webkit-backdrop-filter: blur(50px) drop-shadow(30px 10px 4px rgb(64, 64, 68));
+          backdrop-filter: blur(50px) drop-shadow(30px 10px 4px rgb(64, 64, 68));
   transition: transform 0.5s;
   z-index: 5;
 }
@@ -100,10 +105,37 @@ body {
   padding: 1em 3em;
 }
 .header .nav__link {
+  position: relative;
   font-size: 2rem;
   text-decoration: none;
   letter-spacing: 2.7px;
   color: rgb(255, 255, 255);
+  transition: width 1s;
+}
+.header .nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -0.3em;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: width 0.3s;
+}
+.header .nav__link:hover::after {
+  width: 100%;
+}
+.header .nav__link--select {
+  position: relative;
+}
+.header .nav__link--select::before {
+  content: "";
+  position: absolute;
+  bottom: -0.3em;
+  right: 0;
+  height: 2px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
 }
 .header__logo {
   position: fixed;
@@ -186,16 +218,17 @@ body {
   letter-spacing: 2.7px;
 }
 .header__crew-hero {
+  min-height: 222px;
   width: 100%;
   border-bottom: 1px solid #383b4b;
   margin-bottom: 2em;
 }
 .header__crew-img {
-  margin-left: 2em;
   width: 100%;
-  height: auto;
+  min-height: 222px;
   max-width: 178px;
   max-height: 222px;
+  margin-bottom: -0.2em;
 }
 .header__crew-btnbox {
   margin-bottom: 1em;

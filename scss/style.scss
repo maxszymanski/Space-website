@@ -11,6 +11,11 @@ body {
 	right: 0;
 	padding: 1.6em;
 	z-index: 10;
+	transition: transform 0.3s;
+	cursor: pointer;
+	&:hover {
+		transform: scale(1.15);
+	}
 }
 .hide {
 	display: none;
@@ -20,7 +25,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 	background-image: url(../assets/home/background-home-mobile.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -34,7 +39,7 @@ body {
 		height: 100vh;
 		width: 69%;
 		transform: translateX(100%);
-		backdrop-filter: blur(50px) drop-shadow(30px 10px 4px #404044);
+		backdrop-filter: blur(50px) drop-shadow(30px 10px 4px rgb(64, 64, 68));
 		transition: transform 0.5s;
 		z-index: 5;
 		&--active {
@@ -49,10 +54,39 @@ body {
 			padding: 1em 3em;
 		}
 		&__link {
+			position: relative;
 			font-size: 2rem;
 			text-decoration: none;
 			letter-spacing: 2.7px;
 			color: $white;
+			transition: width 1s;
+			&::after {
+				content: '';
+					position: absolute;
+					bottom: -0.3em;
+					left: 0;
+					height: 2px;
+					width: 0%;
+					background-color:rgb(255, 255, 255,0.25) ;       
+					transition: width .3s;
+			}
+			&:hover::after {
+				width: 100%;
+			}
+			&--select {
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: -0.3em;
+					right: 0;
+					height: 2px;
+					width: 100%;
+					background-color:$white ;       
+					
+				}
+			}
+			
 		}
 	}
 	&__logo {
@@ -136,16 +170,17 @@ body {
 			letter-spacing: 2.7px;
 		}
 		&-hero {
+			min-height: 222px;
 			width: 100%;
 			border-bottom: 1px solid #383b4b;
 			margin-bottom: 2em;
 		}
 		&-img {
-			margin-left: 2em;
 			width: 100%;
-			height: auto;
+			min-height: 222px;
 			max-width: 178px;
 			max-height: 222px;
+			margin-bottom: -0.2em;
 		}
 		&-btnbox {
 			margin-bottom: 1em;
