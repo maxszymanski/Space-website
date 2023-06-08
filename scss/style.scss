@@ -134,9 +134,25 @@ body {
 		font-size: 2rem;
 		text-transform: uppercase;
 		letter-spacing: 1.25px;
-		background: $white;
-		transition: box-shadow 0.3s;
+		background-color: $white;
 		z-index: 2;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 0px;
+			height: 0px;
+			background-color: rgb(255, 255, 255, .1);
+			border-radius: 50%;
+			transition: width 0.3s, height 0.3s;
+			z-index: -1;
+		}
+		&:hover::before {
+			height: 220px;
+			width: 220px;
+		}
 	}
 	&__crew {
 		position: relative;
