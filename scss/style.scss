@@ -60,19 +60,6 @@ body {
 			letter-spacing: 2.7px;
 			color: $white;
 			transition: width 1s;
-			&::after {
-				content: '';
-				position: absolute;
-				bottom: -0.3em;
-				left: 0;
-				height: 2px;
-				width: 0%;
-				background-color: rgb(255, 255, 255, 0.25);
-				transition: width 0.3s;
-			}
-			&:hover::after {
-				width: 100%;
-			}
 			&--select {
 				position: relative;
 				&::before {
