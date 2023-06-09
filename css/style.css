@@ -233,6 +233,8 @@ body {
   margin-bottom: 2em;
   text-transform: uppercase;
   letter-spacing: 2.7px;
+  font-size: 1.6rem;
+  font-weight: normal;
 }
 .header__crew-hero {
   min-height: 222px;
@@ -267,6 +269,8 @@ body {
 .header__crew-job {
   margin-top: 1em;
   color: rgba(255, 255, 255, 0.495);
+  font-size: 1.6rem;
+  font-weight: normal;
 }
 .header__crew-name {
   padding: 0.5em 0 1em;
@@ -350,4 +354,110 @@ body {
   line-height: 25px;
   color: rgb(208, 214, 249);
   font-weight: normal;
+}
+.header__dest {
+  position: relative;
+  background-image: url(../assets/destination/background-destination-mobile.jpg);
+  filter: brightness(1);
+}
+.header__dest-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 1.5em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.header__dest-img {
+  width: 100%;
+  max-width: 170px;
+  max-height: 170px;
+  margin-bottom: 2em;
+}
+.header__dest-btnbox {
+  margin-bottom: 1.5em;
+  display: flex;
+  gap: 1.5em;
+}
+.header__dest-btn {
+  position: relative;
+  border: none;
+  background: none;
+  color: rgb(208, 214, 249);
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2.36px;
+  z-index: 1;
+}
+.header__dest-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -0.7em;
+  left: -1px;
+  height: 3px;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: width 0.3s;
+}
+.header__dest-btn:hover::after {
+  width: 100%;
+}
+.header__dest-btn--active {
+  position: relative;
+  color: rgb(255, 255, 255);
+}
+.header__dest-btn--active::before {
+  content: "";
+  position: absolute;
+  bottom: -0.7em;
+  left: -1px;
+  height: 3px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+.header__dest-name {
+  padding: 0.2em 0;
+  font-family: "Bellefair", serif;
+  font-size: 5.6rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
+}
+.header__dest-text {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.5rem;
+  line-height: 25px;
+  color: rgb(208, 214, 249);
+  font-weight: normal;
+}
+.header__dest-underline {
+  margin: 2.5em 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(56, 59, 75);
+}
+.header__dest-info-box {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+.header__dest-info-box--text {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 2.36px;
+  font-size: 1.4rem;
+  color: rgb(208, 214, 249);
+}
+.header__dest-info-box--number {
+  padding: 0.5em 0 0;
+  font-family: "Bellefair", serif;
+  font-size: 2.8rem;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
+}
+.header__dest-travel {
+  padding-bottom: 1.5em;
 }/*# sourceMappingURL=style.css.map */

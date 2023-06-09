@@ -1,10 +1,10 @@
 import crew from './crew.json' assert { type: 'json' }
 import tech from './technology.json' assert { type: 'json' }
+import dest from './destination.json' assert { type: 'json' }
 const burgerBtn = document.querySelector('.burger-btn')
 const openBtn = document.querySelector('.open-btn')
 const closeBtn = document.querySelector('.close-btn')
 const nav = document.querySelector('.nav')
-const navClose = document.querySelector('.header__close-nav')
 //crew
 const crewBtns = document.querySelectorAll('.header__crew-btn')
 const crewImg = document.querySelector('.header__crew-img')
@@ -17,7 +17,13 @@ const techImg = document.querySelector('.header__tech-img')
 const techName = document.querySelector('.header__tech-name')
 const techText = document.querySelector('.header__tech-text')
 const mediaQuery = window.matchMedia('(min-width: 1200px')
-console.log(mediaQuery);
+// destination
+const destBtns =document.querySelectorAll('.header__dest-btn')
+const destImg = document.querySelector('.header__dest-img')
+const destName = document.querySelector('.header__dest-name')
+const destText = document.querySelector('.header__dest-text')
+const destDistance = document.querySelector('.distance')
+const destTravel = document.querySelector('.header__dest-travel')
 const showNav = () => {
 	openBtn.classList.toggle('hide')
 	closeBtn.classList.toggle('hide')
@@ -89,8 +95,45 @@ const techChange = (e) => {
 		techText.textContent = capsule.description
 	}
 }
+const destChange = e => {
+	destBtns.forEach(btn => btn.classList.remove('header__dest-btn--active'))
+	e.target.classList.add('header__dest-btn--active')
+	if (destBtns[0].classList.contains('header__dest-btn--active')) {
+		const moon = dest.moon
+		destImg.setAttribute('src', moon.images)
+		destName.textContent = moon.name
+		destText.textContent = moon.description
+		destDistance.textContent = moon.distance
+		destTravel.textContent = moon.travel
+	}
+	if (destBtns[1].classList.contains('header__dest-btn--active')) {
+		const mars = dest.mars
+		destImg.setAttribute('src', mars.images)
+		destName.textContent = mars.name
+		destText.textContent = mars.description
+		destDistance.textContent = mars.distance
+		destTravel.textContent = mars.travel
+	}
+	if (destBtns[2].classList.contains('header__dest-btn--active')) {
+		const europa = dest.europa
+		destImg.setAttribute('src', europa.images)
+		destName.textContent = europa.name
+		destText.textContent = europa.description
+		destDistance.textContent = europa.distance
+		destTravel.textContent = europa.travel
+	}
+	if (destBtns[3].classList.contains('header__dest-btn--active')) {
+		const titan = dest.titan
+		destImg.setAttribute('src', titan.images)
+		destName.textContent = titan.name
+		destText.textContent = titan.description
+		destDistance.textContent = titan.distance
+		destTravel.textContent = titan.travel
+	}
+}
 
 
 burgerBtn.addEventListener('click', showNav)
 crewBtns.forEach(btn => btn.addEventListener('click', crewChange))
 techBtns.forEach(btn => btn.addEventListener('click', techChange))
+destBtns.forEach(btn => btn.addEventListener('click', destChange))

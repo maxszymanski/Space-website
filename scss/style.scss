@@ -141,10 +141,10 @@ body {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%,-50%);
+			transform: translate(-50%, -50%);
 			width: 0px;
 			height: 0px;
-			background-color: rgb(255, 255, 255, .1);
+			background-color: rgb(255, 255, 255, 0.1);
 			border-radius: 50%;
 			transition: width 0.3s, height 0.3s;
 			z-index: -1;
@@ -183,6 +183,8 @@ body {
 			margin-bottom: 2em;
 			text-transform: uppercase;
 			letter-spacing: 2.7px;
+			font-size: 1.6rem;
+			font-weight: normal;
 		}
 		&-hero {
 			min-height: 222px;
@@ -217,6 +219,8 @@ body {
 		&-job {
 			margin-top: 1em;
 			color: rgb(255, 255, 255, 0.495);
+			font-size: 1.6rem;
+			font-weight: normal;
 		}
 		&-name {
 			padding: 0.5em 0 1em;
@@ -300,6 +304,113 @@ body {
 			line-height: 25px;
 			color: $light;
 			font-weight: normal;
+		}
+	}
+	&__dest {
+		position: relative;
+		background-image: url(../assets/destination/background-destination-mobile.jpg);
+		filter: brightness(1);
+		&-box {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 2em 1.5em;
+			text-align: center;
+			color: $white;
+		}
+		&-img {
+			width: 100%;
+			max-width: 170px;
+			max-height: 170px;
+			margin-bottom: 2em;
+		}
+		&-btnbox {
+			margin-bottom: 1.5em;
+			display: flex;
+			gap: 1.5em;
+		}
+		&-btn {
+			position: relative;
+			border: none;
+			background: none;
+			color: $light;
+			text-align: center;
+			font-family: $fontCondensed;
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			letter-spacing: 2.36px;
+			z-index: 1;
+			&::after {
+				content: '';
+					position: absolute;
+					bottom: -0.7em;
+					left: -1px;
+					height: 3px;
+					width: 0;
+					background-color: rgb(255, 255, 255,0.5);
+					transition: width 0.3s;
+			}
+			&:hover::after {
+				width: 100% ;
+			}
+			&--active {
+				position: relative;
+				color: $white;
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: -0.7em;
+					left: -1px;
+					height: 3px;
+					width: 100%;
+					background-color: $white;
+					
+				}
+			}
+		}
+		&-name {
+			padding: 0.2em 0; 
+			font-family: $fontHeading;
+			font-size: 5.6rem;
+			text-transform: uppercase;
+			font-weight: normal;
+			color: $white;
+		}
+		&-text {
+			font-family: $fontBarlow;
+			font-size: 1.5rem;
+			line-height: 25px;
+			color: $light;
+			font-weight: normal;
+		}
+		&-underline {
+			margin: 2.5em 0;
+			width: 100%;
+			height: 1px;
+			background-color: rgb(56, 59, 75);
+		}
+		&-info-box {
+			text-transform: uppercase;
+			display: flex;
+			flex-direction: column;
+			gap: 2.5em;	
+			&--text {
+				font-family: $fontCondensed;
+				letter-spacing: 2.36px;
+				font-size: 1.4rem;
+				color: $light;
+			}
+			&--number {
+				padding: .5em 0 0;
+				font-family: $fontHeading;
+				font-size: 2.8rem;
+				font-weight: normal;
+				color: $white;
+			}
+		}
+		&-travel {
+			padding-bottom: 1.5em;
 		}
 	}
 }
