@@ -5,6 +5,8 @@ const burgerBtn = document.querySelector('.burger-btn')
 const openBtn = document.querySelector('.open-btn')
 const closeBtn = document.querySelector('.close-btn')
 const nav = document.querySelector('.nav')
+const techLink = document.querySelector('.nav__tech')
+
 //crew
 const crewBtns = document.querySelectorAll('.header__crew-btn')
 const crewImg = document.querySelector('.header__crew-img')
@@ -16,7 +18,8 @@ const techBtns = document.querySelectorAll('.header__tech-btn')
 const techImg = document.querySelector('.header__tech-img')
 const techName = document.querySelector('.header__tech-name')
 const techText = document.querySelector('.header__tech-text')
-const mediaQuery = window.matchMedia('(min-width: 1200px')
+const mediaQuery = window.matchMedia('(min-width: 1440px')
+const launch = tech.launch
 // destination
 const destBtns =document.querySelectorAll('.header__dest-btn')
 const destImg = document.querySelector('.header__dest-img')
@@ -65,7 +68,6 @@ const techChange = (e) => {
     techBtns.forEach(btn => btn.classList.remove('header__tech-btn--active'))
     e.target.classList.add('header__tech-btn--active')
     if (techBtns[0].classList.contains('header__tech-btn--active')) {
-		const launch = tech.launch
         if(mediaQuery.matches) {
             techImg.setAttribute('src', launch.images.portrait)
         }else {
@@ -131,6 +133,11 @@ const destChange = e => {
 		destTravel.textContent = titan.travel
 	}
 }
+if(mediaQuery.matches && techLink.classList.contains('nav__link--select') ){
+	techImg.setAttribute('src', launch.images.portrait)
+}
+
+
 
 
 burgerBtn.addEventListener('click', showNav)

@@ -289,7 +289,6 @@ body {
   color: rgb(255, 255, 255);
   font-family: "Bellefair", serif;
   font-size: 1.6rem;
-  transition: background 0.3s, border 0.3s;
 }
 .header__tech-btn--active {
   color: rgb(11, 13, 23);
@@ -299,9 +298,6 @@ body {
 }
 .header__tech-btn:nth-child(2) {
   margin: 0 1.2em;
-}
-.header__tech-btn:hover {
-  border: 1px solid rgb(255, 255, 255);
 }
 .header__tech-info {
   padding: 0 1.5em;
@@ -348,6 +344,9 @@ body {
   margin-bottom: 2em;
 }
 .header__dest-btnbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1.5em;
   display: flex;
   gap: 1.5em;
@@ -630,16 +629,23 @@ body {
   .header .nav__list {
     justify-content: start;
     margin-left: 8em;
+    margin-bottom: 0;
+  }
+  .header .nav__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .header .nav__link {
-    margin-right: 7.1em;
-    font-size: 1.4rem;
-    letter-spacing: 2.36px;
+    margin-right: 4.9em;
+    font-size: 1.6rem;
+    letter-spacing: 2.7px;
+    line-height: 16px;
   }
   .header .nav__link::after {
     content: "";
     position: absolute;
-    bottom: -3em;
+    bottom: -2.5em;
     left: -1px;
     height: 3px;
     width: 0;
@@ -655,7 +661,7 @@ body {
   .header .nav__link--select::before {
     content: "";
     position: absolute;
-    bottom: -3em;
+    bottom: -2.5em;
     left: 0;
     height: 3px;
   }
@@ -728,138 +734,189 @@ body {
     width: 450px;
   }
   .header__crew {
-    background-image: url(../assets/crew/background-crew-tablet.jpg);
-  }
-  .header__crew-shadow {
-    background-color: rgba(11, 13, 23, 0.25);
-  }
-  .header__crew-box {
-    padding: 2em 5em 0;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    z-index: 2;
+    min-height: 900px;
+    height: 100vh;
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+    align-items: start;
   }
   .header__crew-title {
-    margin-top: 5em;
-    width: 100%;
-    text-align: left;
-    letter-spacing: 3.4px;
-    font-size: 2rem;
+    padding-left: 3.1em;
+    margin-top: 6.2em;
+    letter-spacing: 4.72px;
+    font-size: 2.8rem;
   }
   .header__crew-tablet {
-    display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
+    max-width: 50vw;
   }
   .header__crew-hero {
-    position: relative;
-    height: auto;
-    min-height: 572px;
-    border-bottom: none;
-    margin-bottom: 0;
-    overflow-y: hidden;
+    position: fixed;
+    bottom: 0;
+    left: -10%;
+    max-height: 712px;
+    z-index: 0;
   }
   .header__crew-img {
-    position: fixed;
-    bottom: 3px;
-    left: 50%;
-    transform: translateX(-50%);
-    min-height: 572px;
-    max-width: 457px;
-    max-height: 572px;
+    position: relative;
+    height: auto;
+    max-width: 568px;
+    max-height: 712px;
+    height: auto;
+    width: 100%;
+  }
+  .header__crew-desktop {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    padding: 4em 0 0 5.2em;
+    text-align: left;
+    z-index: 1;
   }
   .header__crew-btnbox {
-    margin-bottom: 2em;
-    margin-top: 1em;
+    margin-bottom: 0em;
+    margin-top: 7em;
+  }
+  .header__crew-btn {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin: 0 0.7em;
+    transition: background-color 0.2s;
+  }
+  .header__crew-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
   }
   .header__crew-head {
-    margin-top: 1.3em;
+    margin-top: 2.3em;
   }
   .header__crew-job {
-    font-size: 2.4rem;
+    font-size: 3.2rem;
   }
   .header__crew-name {
-    padding: 0.5em 0;
-    font-size: 4rem;
+    padding: 0.2em 0;
+    font-size: 5.6rem;
   }
   .header__crew-text {
-    padding: 0 4.3em 1em;
-    font-size: 1.6rem;
-    line-height: 28px;
+    display: block;
+    padding: 0.8em 11.5em 2em 0;
+    height: 160px;
+    font-size: 1.8rem;
+    line-height: 32px;
   }
   .header__tech {
-    background-image: url(../assets/technology/background-technology-tablet.jpg);
+    background-image: url(../assets/technology/background-technology-desktop.jpg);
   }
   .header__tech-title {
-    margin-left: 8em;
+    margin-left: 2.8em;
   }
   .header__tech-img {
-    height: auto;
-    min-height: 310px;
-    width: 100%;
-    margin-top: 1.5em;
-    margin-bottom: 3.5em;
+    position: fixed;
+    top: 272px;
+    right: 0;
+    height: 527;
+    max-width: 515px;
+    margin: 0;
+  }
+  .header__tech-box {
+    align-items: start;
+  }
+  .header__tech-desktop {
+    display: flex;
+    flex-direction: row;
+    padding: 5.3em 0 0 10.3em;
   }
   .header__tech-btnbox {
-    margin-bottom: 2.5em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-right: 5em;
   }
   .header__tech-btn {
-    width: 58px;
-    height: 58px;
-    font-size: 2.4rem;
+    width: 80px;
+    height: 80px;
+    font-size: 3.2rem;
+    transition: border 0.3s;
+  }
+  .header__tech-btn:nth-child(2) {
+    margin: 1.1em 0;
+  }
+  .header__tech-btn:hover {
+    border: 1px solid rgb(255, 255, 255);
   }
   .header__tech-info {
-    padding: 0 10.3em;
-  }
-  .header__tech-term {
-    letter-spacing: 2.7px;
+    width: 470px;
+    text-align: left;
+    padding: 0em;
   }
   .header__tech-name {
-    padding: 0.5em 0;
-    font-size: 4rem;
+    font-size: 5.6rem;
+    padding: 0.3em 0;
   }
   .header__tech-text {
-    font-size: 1.6rem;
-    line-height: 28px;
+    padding-right: 1.5em;
+    font-size: 1.8rem;
+    line-height: 32px;
   }
   .header__dest {
-    background-image: url(../assets/destination/background-destination-tablet.jpg);
+    min-height: 900px;
+    height: 100vh;
+    background-image: url(../assets/destination/background-destination-desktop.jpg);
+    align-items: start;
   }
   .header__dest-box {
-    padding: 2em 5em;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .header__dest-title {
+    margin-left: 4em;
+  }
+  .header__dest-desktop {
+    display: flex;
+    gap: 5em;
+  }
+  .header__dest-container {
+    margin-top: 0.7em;
+    width: 445px;
+    height: 472px;
+    text-align: left;
   }
   .header__dest-img {
-    width: 100%;
-    max-width: 300px;
-    max-height: 300px;
-    margin-bottom: 3em;
-    margin-top: 1.5em;
+    max-width: 445px;
+    max-height: 445px;
+    margin: 3em 4.8em 0 4.5em;
   }
   .header__dest-btnbox {
-    margin-bottom: 1.5em;
-    gap: 2em;
+    justify-content: start;
+    margin-bottom: 1.3em;
+    gap: 2.2em;
   }
-  .header__dest-btn {
-    font-size: 1.6rem;
-    letter-spacing: 2.7px;
+  .header__dest-btn::after {
+    content: "";
+    position: absolute;
+    bottom: -1em;
+    left: -1px;
+    height: 3px;
+    width: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: width 0.3s;
+  }
+  .header__dest-btn:hover::after {
+    width: 100%;
   }
   .header__dest-name {
-    padding: 0.2em 0;
-    font-size: 8rem;
+    font-size: 10rem;
   }
   .header__dest-text {
-    padding: 0 1em;
-    font-size: 1.6rem;
-    line-height: 28px;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 32px;
   }
   .header__dest-underline {
-    margin: 3.2em 0 1.5em;
+    margin: 3.6em 0 2em 0;
   }
   .header__dest-info-box {
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 0;
-  }
-  .header__dest-travel {
-    padding-bottom: 1em;
+    justify-content: start;
+    gap: 6em;
   }
 }/*# sourceMappingURL=style.css.map */

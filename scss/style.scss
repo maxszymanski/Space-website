@@ -125,7 +125,6 @@ body {
 		letter-spacing: 1.25px;
 		background-color: $white;
 		z-index: 2;
-		
 	}
 	&__crew {
 		position: relative;
@@ -240,7 +239,6 @@ body {
 			color: $white;
 			font-family: $fontHeading;
 			font-size: 1.6rem;
-			transition: background 0.3s, border 0.3s;
 			&--active {
 				color: $black;
 				background: $white;
@@ -249,9 +247,6 @@ body {
 			}
 			&:nth-child(2) {
 				margin: 0 1.2em;
-			}
-			&:hover {
-				border: 1px solid $white;
 			}
 		}
 		&-info {
@@ -299,6 +294,9 @@ body {
 			margin-bottom: 2em;
 		}
 		&-btnbox {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			margin-bottom: 1.5em;
 			display: flex;
 			gap: 1.5em;
@@ -583,15 +581,22 @@ body {
 			&__list {
 				justify-content: start;
 				margin-left: 8em;
+				margin-bottom: 0;
+			}
+			&__item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 			&__link {
-				margin-right: 7.1em;
-				font-size: 1.4rem;
-				letter-spacing: 2.36px;
+				margin-right: 4.9em;
+				font-size: 1.6rem;
+				letter-spacing: 2.7px;
+				line-height: 16px;
 				&::after {
 					content: '';
 					position: absolute;
-					bottom: -3em;
+					bottom: -2.5em;
 					left: -1px;
 					height: 3px;
 					width: 0;
@@ -606,7 +611,7 @@ body {
 					&::before {
 						content: '';
 						position: absolute;
-						bottom: -3em;
+						bottom: -2.5em;
 						left: 0;
 						height: 3px;
 					}
@@ -640,7 +645,7 @@ body {
 			padding: 12em 4em 1em;
 		}
 		&__heading {
-			padding:10.3em 11.5em 0 5em;
+			padding: 10.3em 11.5em 0 5em;
 			text-align: left;
 		}
 		&__heading-small {
@@ -682,139 +687,191 @@ body {
 			}
 		}
 		&__crew {
-			background-image: url(../assets/crew/background-crew-tablet.jpg);
-			&-shadow {
-				background-color: rgba(11, 13, 23, 0.25);
-			}
-			&-box {
-				padding: 2em 5em 0;
-				text-align: center;
-				color: $white;
-				z-index: 2;
-			}
+			min-height: 900px;
+			height: 100vh;
+			background-image: url(../assets/crew/background-crew-desktop.jpg);
+			align-items: start;
 			&-title {
-				margin-top: 5em;
-				width: 100%;
-				text-align: left;
-				letter-spacing: 3.4px;
-				font-size: 2rem;
+				padding-left: 3.1em;
+				margin-top: 6.2em;
+				letter-spacing: 4.72px;
+				font-size: 2.8rem;
 			}
 			&-tablet {
-				display: flex;
-				flex-direction: column-reverse;
+				flex-direction: row-reverse;
+				max-width: 50vw;
 			}
 			&-hero {
+				position: fixed;
+				bottom: 0;
+				left: -10%;
+				max-height: 712px;
+				z-index: 0;
+			}
+			&-img {
 				position: relative;
 				height: auto;
-				min-height: 572px;
-				border-bottom: none;
-				margin-bottom: 0;
-				overflow-y: hidden;
+				max-width: 568px;
+				max-height: 712px;
+				height: auto;
+				width: 100%;
 			}
-			&-img {
-				position: fixed;
-				bottom: 3px;
-				left: 50%;
-				transform: translateX(-50%);
-				min-height: 572px;
-				max-width: 457px;
-				max-height: 572px;
+			&-desktop {
+				display: flex;
+				flex-direction: column-reverse;
+				justify-content: start;
+				padding: 4em 0 0 5.2em;
+				text-align: left;
+				z-index: 1;
 			}
 			&-btnbox {
-				margin-bottom: 2em;
-				margin-top: 1em;
+				margin-bottom: 0em;
+				margin-top: 7em;
+			}
+			&-btn {
+				position: relative;
+				width: 15px;
+				height: 15px;
+				margin: 0 0.7em;
+				transition: background-color 0.2s;
+				&:hover {
+					background-color: rgb(255, 255, 255, 0.5);
+				}
 			}
 			&-head {
-				margin-top: 1.3em;
+				margin-top: 2.3em;
 			}
 			&-job {
-				font-size: 2.4rem;
-			}
-			&-name {
-				padding: 0.5em 0;
-				font-size: 4rem;
-			}
-			&-text {
-				padding: 0 4.3em 1em;
-				font-size: 1.6rem;
-				line-height: 28px;
-			}
-		}
-		&__tech {
-			background-image: url(../assets/technology/background-technology-tablet.jpg);
-			&-title {
-				margin-left: 8em;
-			}
-			&-img {
-				height: auto;
-				min-height: 310px;
-				width: 100%;
-				margin-top: 1.5em;
-				margin-bottom: 3.5em;
-			}
-			&-btnbox {
-				margin-bottom: 2.5em;
-			}
-			&-btn {
-				width: 58px;
-				height: 58px;
-				font-size: 2.4rem;
-			}
-			&-info {
-				padding: 0 10.3em;
-			}
-
-			&-term {
-				letter-spacing: 2.7px;
-			}
-			&-name {
-				padding: 0.5em 0;
-				font-size: 4rem;
-			}
-			&-text {
-				font-size: 1.6rem;
-				line-height: 28px;
-			}
-		}
-		&__dest {
-			background-image: url(../assets/destination/background-destination-tablet.jpg);
-			&-box {
-				padding: 2em 5em;
-			}
-			&-img {
-				width: 100%;
-				max-width: 300px;
-				max-height: 300px;
-				margin-bottom: 3em;
-				margin-top: 1.5em;
-			}
-			&-btnbox {
-				margin-bottom: 1.5em;
-				gap: 2em;
-			}
-			&-btn {
-				font-size: 1.6rem;
-				letter-spacing: 2.7px;
+				font-size: 3.2rem;
 			}
 			&-name {
 				padding: 0.2em 0;
-				font-size: 8rem;
+				font-size: 5.6rem;
 			}
 			&-text {
-				padding: 0 1em;
-				font-size: 1.6rem;
-				line-height: 28px;
+				display: block;
+				padding: 0.8em 11.5em 2em 0;
+				height: 160px;
+				font-size: 1.8rem;
+				line-height: 32px;
+			}
+		}
+		&__tech {
+			background-image: url(../assets/technology/background-technology-desktop.jpg);
+			&-title {
+				margin-left: 2.8em;
+			}
+			&-img {
+				position: fixed;
+				top: 272px;
+				right: 0;
+				height: 527;
+				max-width: 515px;
+				margin: 0;
+			}
+			&-box {
+				align-items: start;
+			}
+			&-desktop {
+				display: flex;
+				flex-direction: row;
+				padding: 5.3em 0 0 10.3em;
+			}
+			&-btnbox {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 0;
+				margin-right: 5em;
+			}
+			&-btn {
+				width: 80px;
+				height: 80px;
+				font-size: 3.2rem;
+				transition: border 0.3s;
+				&:nth-child(2) {
+					margin: 1.1em 0;
+				}
+				&:hover {
+					border: 1px solid $white;
+				}
+			}
+			&-info {
+				width: 470px;
+				text-align: left;
+				padding: 0em;
+			}
+			&-name {
+				font-size: 5.6rem;
+				padding: 0.3em 0;
+			}
+			&-text {
+				padding-right: 1.5em;
+				font-size: 1.8rem;
+				line-height: 32px;
+			}
+		}
+		&__dest {
+			min-height: 900px;
+			height: 100vh;
+			background-image: url(../assets/destination/background-destination-desktop.jpg);
+			align-items: start;
+			&-box {
+				width: 100%;
+				max-width: 1440px;
+				margin: 0 auto;
+			}
+			&-title {
+				margin-left: 4em;
+			}
+			&-desktop {
+				display: flex;
+				gap: 5em;
+			}
+			&-container {
+				margin-top: 0.7em;
+				width: 445px;
+				height: 472px;
+				text-align: left;
+			}
+			&-img {
+				max-width: 445px;
+				max-height: 445px;
+				margin: 3em 4.8em 0 4.5em;
+			}
+			&-btnbox {
+				justify-content: start;
+				margin-bottom: 1.3em;
+				gap: 2.2em;
+			}
+			&-btn {
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: -1em;
+					left: -1px;
+					height: 3px;
+					width: 0;
+					background-color: rgb(255, 255, 255, 0.5);
+					transition: width 0.3s;
+				}
+				&:hover::after {
+					width: 100%;
+				}
+			}
+			&-name {
+				font-size: 10rem;
+			}
+			&-text {
+				padding: 0;
+				font-size: 1.8rem;
+				line-height: 32px;
 			}
 			&-underline {
-				margin: 3.2em 0 1.5em;
+				margin: 3.6em 0 2em 0;
 			}
 			&-info-box {
-				flex-direction: row;
-				justify-content: space-evenly;
-				gap: 0;
-			}
-			&-travel {
-				padding-bottom: 1em;
+				justify-content: start;
+				gap: 6em;
 			}
 		}
 	}
