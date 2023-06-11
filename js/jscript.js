@@ -77,7 +77,9 @@ const techChange = e => {
 		}
 		techName.textContent = launch.name
 		techText.textContent = launch.description
-		techText.animate(techAnimation, animationTiming)
+		if(mediaQuery.matches){
+			techText.animate(techAnimation, animationTiming)
+		}
 	}
 	if (techBtns[1].classList.contains('header__tech-btn--active')) {
 		const spaceport = tech.spaceport
@@ -88,7 +90,9 @@ const techChange = e => {
 		}
 		techName.textContent = spaceport.name
 		techText.textContent = spaceport.description
-		techText.animate(techAnimation, animationTiming)
+		if(mediaQuery.matches){
+			techText.animate(techAnimation, animationTiming)
+		}
 	}
 	if (techBtns[2].classList.contains('header__tech-btn--active')) {
 		const capsule = tech.capsule
@@ -99,7 +103,9 @@ const techChange = e => {
 		}
 		techName.textContent = capsule.name
 		techText.textContent = capsule.description
-		techText.animate(techAnimation, animationTiming)
+		if(mediaQuery.matches){
+			techText.animate(techAnimation, animationTiming)
+		}
 	}
 }
 const destChange = e => {
