@@ -485,7 +485,9 @@ body {
     letter-spacing: 2px;
   }
   .header__crew {
+    max-height: 1024px;
     background-image: url(../assets/crew/background-crew-tablet.jpg);
+    overflow-y: hidden;
   }
   .header__crew-shadow {
     background-color: rgba(11, 13, 23, 0.25);
@@ -517,7 +519,7 @@ body {
   }
   .header__crew-img {
     position: fixed;
-    bottom: 3px;
+    bottom: -3em;
     left: 50%;
     transform: translateX(-50%);
     min-height: 572px;
@@ -535,7 +537,7 @@ body {
     font-size: 2.4rem;
   }
   .header__crew-name {
-    padding: 0.5em 0;
+    padding: 0.3em 0;
     font-size: 4rem;
   }
   .header__crew-text {
