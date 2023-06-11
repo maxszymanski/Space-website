@@ -14,19 +14,19 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 ## Overview
 ### Screenshot
 
-![](./assets/screenshot/Macbook%20Pro-1686493697125.jpeg)
-![](./assets/screenshot/Macbook%20Pro-1686493716225.jpeg)
-![](./assets/screenshot/Macbook%20Pro-1686493732247.jpeg)
-![](./assets/screenshot/Macbook%20Pro-1686493750772.jpeg)
-![](./assets/screenshot/iPad-1686493703428.jpeg)
-![](./assets/screenshot/iPad-1686493711846.jpeg)
-![](./assets/screenshot/iPad-1686493728556.jpeg)
-![](./assets/screenshot/iPad-1686493746068.jpeg)
-![](./assets/screenshot/Screenshot_home.png)
-![](./assets/screenshot/Screenshot_homeActive.png)
-![](./assets/screenshot/Screenshot_crew.png)
-![](./assets/screenshot/Screenshot_technology.png)
-![](./assets/screenshot/iPhone%2012%20Pro-1686489713942.jpeg)
+![](./assets/screenshot1/Macbook%20Pro-1686493697125.jpeg)
+![](./assets/screenshot1/Macbook%20Pro-1686493716225.jpeg)
+![](./assets/screenshot1/Macbook%20Pro-1686493732247.jpeg)
+![](./assets/screenshot1/Macbook%20Pro-1686493750772.jpeg)
+![](./assets/screenshot1/iPad-1686493703428.jpeg)
+![](./assets/screenshot1/iPad-1686493711846.jpeg)
+![](./assets/screenshot1/iPad-1686493728556.jpeg)
+![](./assets/screenshot1/iPad-1686493746068.jpeg)
+![](./assets/screenshot1/Screenshot_home.png)
+![](./assets/screenshot1/Screenshot_homeActive.png)
+![](./assets/screenshot1/Screenshot_crew.png)
+![](./assets/screenshot1/Screenshot_technology.png)
+![](./assets/screenshot1/iPhone%2012%20Pro-1686489713942.jpeg)
 
 
 ### Links
