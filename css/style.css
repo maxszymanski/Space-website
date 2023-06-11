@@ -454,7 +454,7 @@ body {
     letter-spacing: 2.36px;
   }
   .header .nav__link--select::before {
-    bottom: -3em;
+    bottom: -30px;
     height: 3px;
   }
   .header__logo {
@@ -652,7 +652,7 @@ body {
   .header .nav__link::after {
     content: "";
     position: absolute;
-    bottom: -2.5em;
+    bottom: -23px;
     left: -1px;
     height: 3px;
     width: 0;
@@ -668,7 +668,7 @@ body {
   .header .nav__link--select::before {
     content: "";
     position: absolute;
-    bottom: -2.5em;
+    bottom: -23px;
     left: 0;
     height: 3px;
   }
