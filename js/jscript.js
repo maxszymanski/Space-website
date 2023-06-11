@@ -5,28 +5,30 @@ const burgerBtn = document.querySelector('.burger-btn')
 const openBtn = document.querySelector('.open-btn')
 const closeBtn = document.querySelector('.close-btn')
 const nav = document.querySelector('.nav')
-const techLink = document.querySelector('.nav__tech')
-
-//crew
+const navLinks = document.querySelectorAll('.nav__link')
+const exporeBtn = document.querySelector('.header__explore')
 const crewBtns = document.querySelectorAll('.header__crew-btn')
 const crewImg = document.querySelector('.header__crew-img')
 const crewJob = document.querySelector('.header__crew-job')
 const crewName = document.querySelector('.header__crew-name')
 const crewBio = document.querySelector('.header__crew-text')
-//tech
 const techBtns = document.querySelectorAll('.header__tech-btn')
 const techImg = document.querySelector('.header__tech-img')
 const techName = document.querySelector('.header__tech-name')
 const techText = document.querySelector('.header__tech-text')
 const mediaQuery = window.matchMedia('(min-width: 1440px')
 const launch = tech.launch
-// destination
-const destBtns =document.querySelectorAll('.header__dest-btn')
+const destBtns = document.querySelectorAll('.header__dest-btn')
 const destImg = document.querySelector('.header__dest-img')
 const destName = document.querySelector('.header__dest-name')
 const destText = document.querySelector('.header__dest-text')
 const destDistance = document.querySelector('.distance')
 const destTravel = document.querySelector('.header__dest-travel')
+const techAnimation = [{ transform: 'translate(10%,100%) scale(0)' }, { transform: 'translate(0) scale(1)' }]
+const animationTiming = {
+	duration: 800,
+	iterations: 1,
+}
 const showNav = () => {
 	openBtn.classList.toggle('hide')
 	closeBtn.classList.toggle('hide')
@@ -64,37 +66,40 @@ const crewChange = e => {
 		crewBio.textContent = engineer.bio
 	}
 }
-const techChange = (e) => {
-    techBtns.forEach(btn => btn.classList.remove('header__tech-btn--active'))
-    e.target.classList.add('header__tech-btn--active')
-    if (techBtns[0].classList.contains('header__tech-btn--active')) {
-        if(mediaQuery.matches) {
-            techImg.setAttribute('src', launch.images.portrait)
-        }else {
-            techImg.setAttribute('src', launch.images.landscape)
-        }
+const techChange = e => {
+	techBtns.forEach(btn => btn.classList.remove('header__tech-btn--active'))
+	e.target.classList.add('header__tech-btn--active')
+	if (techBtns[0].classList.contains('header__tech-btn--active')) {
+		if (mediaQuery.matches) {
+			techImg.setAttribute('src', launch.images.portrait)
+		} else {
+			techImg.setAttribute('src', launch.images.landscape)
+		}
 		techName.textContent = launch.name
 		techText.textContent = launch.description
+		techText.animate(techAnimation, animationTiming)
 	}
 	if (techBtns[1].classList.contains('header__tech-btn--active')) {
 		const spaceport = tech.spaceport
-        if(mediaQuery.matches) {
-            techImg.setAttribute('src', spaceport.images.portrait)
-        }else {
-            techImg.setAttribute('src', spaceport.images.landscape)
-        }
+		if (mediaQuery.matches) {
+			techImg.setAttribute('src', spaceport.images.portrait)
+		} else {
+			techImg.setAttribute('src', spaceport.images.landscape)
+		}
 		techName.textContent = spaceport.name
 		techText.textContent = spaceport.description
+		techText.animate(techAnimation, animationTiming)
 	}
 	if (techBtns[2].classList.contains('header__tech-btn--active')) {
 		const capsule = tech.capsule
-        if(mediaQuery.matches) {
-            techImg.setAttribute('src', capsule.images.portrait)
-        }else {
-            techImg.setAttribute('src', capsule.images.landscape)
-        }
+		if (mediaQuery.matches) {
+			techImg.setAttribute('src', capsule.images.portrait)
+		} else {
+			techImg.setAttribute('src', capsule.images.landscape)
+		}
 		techName.textContent = capsule.name
 		techText.textContent = capsule.description
+		techText.animate(techAnimation, animationTiming)
 	}
 }
 const destChange = e => {
@@ -133,13 +138,10 @@ const destChange = e => {
 		destTravel.textContent = titan.travel
 	}
 }
-if(mediaQuery.matches && techLink.classList.contains('nav__link--select') ){
+if (mediaQuery.matches && navLinks[3].classList.contains('nav__link--select')) {
 	techImg.setAttribute('src', launch.images.portrait)
+	techText.animate(techAnimation, animationTiming)
 }
-
-
-
-
 burgerBtn.addEventListener('click', showNav)
 crewBtns.forEach(btn => btn.addEventListener('click', crewChange))
 techBtns.forEach(btn => btn.addEventListener('click', techChange))
