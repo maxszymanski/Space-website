@@ -37,117 +37,85 @@ const showNav = () => {
 const crewChange = e => {
 	crewBtns.forEach(btn => btn.classList.remove('header__crew-btn--active'))
 	e.target.classList.add('header__crew-btn--active')
+	const crewInfo = function({images,role,name,bio}) {
+		crewImg.setAttribute('src', images)
+		crewJob.textContent = role
+		crewName.textContent = name
+		crewBio.textContent = bio
+	}
 	if (crewBtns[0].classList.contains('header__crew-btn--active')) {
-		const commander = crew.douglas
-		crewImg.setAttribute('src', commander.images)
-		crewJob.textContent = commander.role
-		crewName.textContent = commander.name
-		crewBio.textContent = commander.bio
+		crewInfo(crew.douglas)
 	}
 	if (crewBtns[1].classList.contains('header__crew-btn--active')) {
-		const spec = crew.mark
-		crewImg.setAttribute('src', spec.images)
-		crewJob.textContent = spec.role
-		crewName.textContent = spec.name
-		crewBio.textContent = spec.bio
+		crewInfo(crew.mark)
 	}
 	if (crewBtns[2].classList.contains('header__crew-btn--active')) {
-		const pilot = crew.victor
-		crewImg.setAttribute('src', pilot.images)
-		crewJob.textContent = pilot.role
-		crewName.textContent = pilot.name
-		crewBio.textContent = pilot.bio
+		crewInfo(crew.victor)
 	}
 	if (crewBtns[3].classList.contains('header__crew-btn--active')) {
-		const engineer = crew.ansari
-		crewImg.setAttribute('src', engineer.images)
-		crewJob.textContent = engineer.role
-		crewName.textContent = engineer.name
-		crewBio.textContent = engineer.bio
+		crewInfo(crew.ansari)
 	}
 }
 const techChange = e => {
 	techBtns.forEach(btn => btn.classList.remove('header__tech-btn--active'))
 	e.target.classList.add('header__tech-btn--active')
-	if (techBtns[0].classList.contains('header__tech-btn--active')) {
-		if (mediaQuery.matches) {
-			techImg.setAttribute('src', launch.images.portrait)
-		} else {
-			techImg.setAttribute('src', launch.images.landscape)
-		}
-		techName.textContent = launch.name
-		techText.textContent = launch.description
-		if(mediaQuery.matches){
+	techBtns.forEach(btn => {
+		if(btn.classList.contains('header__tech-btn--active') && mediaQuery.matches) {
 			techText.animate(techAnimation, animationTiming)
 		}
+	})
+	const spaceport = tech.spaceport
+	const capsule = tech.capsule
+	const techInfo = function({images,name,description}) {
+		if (mediaQuery.matches) {
+			techImg.setAttribute('src', images.portrait)
+		} else {
+			techImg.setAttribute('src', images.landscape)
+		}
+		techName.textContent = name
+		techText.textContent = description
+	}
+	if (techBtns[0].classList.contains('header__tech-btn--active')) {
+		techInfo(tech.launch)
 	}
 	if (techBtns[1].classList.contains('header__tech-btn--active')) {
-		const spaceport = tech.spaceport
-		if (mediaQuery.matches) {
-			techImg.setAttribute('src', spaceport.images.portrait)
-		} else {
-			techImg.setAttribute('src', spaceport.images.landscape)
-		}
-		techName.textContent = spaceport.name
-		techText.textContent = spaceport.description
-		if(mediaQuery.matches){
-			techText.animate(techAnimation, animationTiming)
-		}
+		techInfo(tech.spaceport)
 	}
 	if (techBtns[2].classList.contains('header__tech-btn--active')) {
-		const capsule = tech.capsule
-		if (mediaQuery.matches) {
-			techImg.setAttribute('src', capsule.images.portrait)
-		} else {
-			techImg.setAttribute('src', capsule.images.landscape)
-		}
-		techName.textContent = capsule.name
-		techText.textContent = capsule.description
-		if(mediaQuery.matches){
-			techText.animate(techAnimation, animationTiming)
-		}
+		techInfo(tech.capsule)
 	}
 }
 const destChange = e => {
 	destBtns.forEach(btn => btn.classList.remove('header__dest-btn--active'))
 	e.target.classList.add('header__dest-btn--active')
-	if (destBtns[0].classList.contains('header__dest-btn--active')) {
-		const moon = dest.moon
-		destImg.setAttribute('src', moon.images)
-		destName.textContent = moon.name
-		destText.textContent = moon.description
-		destDistance.textContent = moon.distance
-		destTravel.textContent = moon.travel
+	const planetInfo = function({images, name,description,distance,travel}) {
+		destImg.setAttribute('src', images)
+		destName.textContent = name
+		destText.textContent = description
+		destDistance.textContent =distance
+		destTravel.textContent =travel
 	}
-	if (destBtns[1].classList.contains('header__dest-btn--active')) {
-		const mars = dest.mars
-		destImg.setAttribute('src', mars.images)
-		destName.textContent = mars.name
-		destText.textContent = mars.description
-		destDistance.textContent = mars.distance
-		destTravel.textContent = mars.travel
+	if (destBtns[0].classList.contains('header__dest-btn--active')){
+	planetInfo(dest.moon)
 	}
-	if (destBtns[2].classList.contains('header__dest-btn--active')) {
-		const europa = dest.europa
-		destImg.setAttribute('src', europa.images)
-		destName.textContent = europa.name
-		destText.textContent = europa.description
-		destDistance.textContent = europa.distance
-		destTravel.textContent = europa.travel
+	if (destBtns[1].classList.contains('header__dest-btn--active')){
+		planetInfo(dest.mars)
+	}
+	if (destBtns[2].classList.contains('header__dest-btn--active')){
+		planetInfo(dest.europa)
 	}
 	if (destBtns[3].classList.contains('header__dest-btn--active')) {
-		const titan = dest.titan
-		destImg.setAttribute('src', titan.images)
-		destName.textContent = titan.name
-		destText.textContent = titan.description
-		destDistance.textContent = titan.distance
-		destTravel.textContent = titan.travel
+		planetInfo(dest.titan)
 	}
 }
-if (mediaQuery.matches && navLinks[3].classList.contains('nav__link--select')) {
-	techImg.setAttribute('src', launch.images.portrait)
-	techText.animate(techAnimation, animationTiming)
+const checkMedia = () => {
+	if (mediaQuery.matches && navLinks[3].classList.contains('nav__link--select')) {
+		techImg.setAttribute('src', tech.launch.images.portrait)
+		techText.animate(techAnimation, animationTiming)
+	}
 }
+checkMedia()
+
 burgerBtn.addEventListener('click', showNav)
 crewBtns.forEach(btn => btn.addEventListener('click', crewChange))
 techBtns.forEach(btn => btn.addEventListener('click', techChange))

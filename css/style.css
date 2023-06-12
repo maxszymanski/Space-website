@@ -626,6 +626,7 @@ body {
 @media (min-width: 1440px) {
   .header {
     background-image: url(../assets/home/background-home-desktop.jpg);
+    filter: brightness(1);
   }
   .header .nav {
     top: 40px;
@@ -744,6 +745,7 @@ body {
   .header__crew {
     min-height: 900px;
     height: 100vh;
+    max-height: 100vh;
     background-image: url(../assets/crew/background-crew-desktop.jpg);
     align-items: start;
   }
