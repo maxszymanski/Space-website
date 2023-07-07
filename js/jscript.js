@@ -64,8 +64,6 @@ const techChange = e => {
 			techText.animate(techAnimation, animationTiming)
 		}
 	})
-	const spaceport = tech.spaceport
-	const capsule = tech.capsule
 	const techInfo = function({images,name,description}) {
 		if (mediaQuery.matches) {
 			techImg.setAttribute('src', images.portrait)
@@ -115,7 +113,6 @@ const checkMedia = () => {
 	}
 }
 checkMedia()
-
 burgerBtn.addEventListener('click', showNav)
 crewBtns.forEach(btn => btn.addEventListener('click', crewChange))
 techBtns.forEach(btn => btn.addEventListener('click', techChange))
