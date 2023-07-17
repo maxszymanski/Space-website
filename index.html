@@ -1,41 +1,43 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>MaxProjects | Strony internetowe</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <header>
-        <div class="title">
-            <p>MaxProjects</p>
-            <h1>Profesjonale strony internetowych</h1>
-        </div>
-        <button class="btn header-btn">Skontaktuj się z nami!</button>
-       
-        <!-- <img src="https://pixabay.com/get/gc4532c9247fc0ae7d3f1620d8ed0d4fd09641de08545a4d9ca67767b5b3e04b6b3ffc311eb61c433983fd4afdd3f6303.svg" alt=""> -->
-    </header>
-    <main>
-        <section class="projects">
-        <div class="projects__left"><img src="https://pixabay.com/get/ge11d891fec286d76be1b19abf55009a4d8755d9882d46af935fa56d601abcc63e9e3952cc3dd6ac373b911a78413c26b.svg" alt="" class="project-img"></div>
-        <div class="projects__right"></div>
-        <div class="container">
-            <h2 class="">Projekty</h2>
-            <div class="projects-box">
-                <div class="project__one">
-                    <p>Space Explore</p>
-                        <a href="space.html">Zobacz nasz projekt</a>
-                    </div>
-                    <div class="project__two">
-                        <p>Firma Elektryczna</p>
-                        <a href="https://eltom.online">Zobacz nasz projekt</a>
-                    </div>
+<html lang="en">
 
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>MAxProjects | Space tourism website</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="burger-btn">
+      <img src="./assets/shared/icon-hamburger.svg" alt="hamburger icon" class="open-btn">
+      <img src="./assets/shared/icon-close.svg" alt="x icon" class="close-btn hide">
     </div>
-  </section>
-    </main>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link nav__link--select">home</a></li>
+        <li class="nav__item "><a href="destination.html" class="nav__link">destination</a></li>
+        <li class="nav__item"><a href="crew.html" class="nav__link">crew</a></li>
+        <li class="nav__item "><a href="technology.html" class="nav__link">technology</a></li>
+      </ul>
+    </nav>
+    <a href="index.html" class="header__logo"><img src="./assets/shared/logo.svg" alt="company logo"
+        class="header__logo"></a>
+    <div class="header__box">
+      <div class="header__heading">
+        <p class="header__heading-small">So, you want to travel to</p>
+        <h1 class=" header__heading-main">space</h1>
+        <p class="header__text">Let’s face it; if you want to go to space, you might as well genuinely go to outer space
+          and not hover kind of on the edge of it. Well sit back, and relax
+          because we’ll give you a truly out of this world experience!</p>
+      </div>
+      <button class="header__explore" onclick="location.href='destination.html'" type="button">explore</button>
+    </div>
+  </header>
+  <script type="module" src="./js/jscript.js"></script>
 </body>
+
 </html>
