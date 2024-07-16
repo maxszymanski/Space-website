@@ -1,12 +1,9 @@
-import crew from './crew.json' assert { type: 'json' }
-import tech from './technology.json' assert { type: 'json' }
-import dest from './destination.json' assert { type: 'json' }
+import { dest, crew, tech } from './data.js'
 const burgerBtn = document.querySelector('.burger-btn')
 const openBtn = document.querySelector('.open-btn')
 const closeBtn = document.querySelector('.close-btn')
 const nav = document.querySelector('.nav')
 const navLinks = document.querySelectorAll('.nav__link')
-const exporeBtn = document.querySelector('.header__explore')
 const crewBtns = document.querySelectorAll('.header__crew-btn')
 const crewImg = document.querySelector('.header__crew-img')
 const crewJob = document.querySelector('.header__crew-job')
@@ -17,7 +14,6 @@ const techImg = document.querySelector('.header__tech-img')
 const techName = document.querySelector('.header__tech-name')
 const techText = document.querySelector('.header__tech-text')
 const mediaQuery = window.matchMedia('(min-width: 1440px')
-const launch = tech.launch
 const destBtns = document.querySelectorAll('.header__dest-btn')
 const destImg = document.querySelector('.header__dest-img')
 const destName = document.querySelector('.header__dest-name')
@@ -29,6 +25,7 @@ const animationTiming = {
 	duration: 800,
 	iterations: 1,
 }
+console.log('siema')
 const showNav = () => {
 	openBtn.classList.toggle('hide')
 	closeBtn.classList.toggle('hide')
@@ -37,7 +34,7 @@ const showNav = () => {
 const crewChange = e => {
 	crewBtns.forEach(btn => btn.classList.remove('header__crew-btn--active'))
 	e.target.classList.add('header__crew-btn--active')
-	const crewInfo = function({images,role,name,bio}) {
+	const crewInfo = function ({ images, role, name, bio }) {
 		crewImg.setAttribute('src', images)
 		crewJob.textContent = role
 		crewName.textContent = name
@@ -60,11 +57,11 @@ const techChange = e => {
 	techBtns.forEach(btn => btn.classList.remove('header__tech-btn--active'))
 	e.target.classList.add('header__tech-btn--active')
 	techBtns.forEach(btn => {
-		if(btn.classList.contains('header__tech-btn--active') && mediaQuery.matches) {
+		if (btn.classList.contains('header__tech-btn--active') && mediaQuery.matches) {
 			techText.animate(techAnimation, animationTiming)
 		}
 	})
-	const techInfo = function({images,name,description}) {
+	const techInfo = function ({ images, name, description }) {
 		if (mediaQuery.matches) {
 			techImg.setAttribute('src', images.portrait)
 		} else {
@@ -86,20 +83,20 @@ const techChange = e => {
 const destChange = e => {
 	destBtns.forEach(btn => btn.classList.remove('header__dest-btn--active'))
 	e.target.classList.add('header__dest-btn--active')
-	const planetInfo = function({images, name,description,distance,travel}) {
+	const planetInfo = function ({ images, name, description, distance, travel }) {
 		destImg.setAttribute('src', images)
 		destName.textContent = name
 		destText.textContent = description
-		destDistance.textContent =distance
-		destTravel.textContent =travel
+		destDistance.textContent = distance
+		destTravel.textContent = travel
 	}
-	if (destBtns[0].classList.contains('header__dest-btn--active')){
-	planetInfo(dest.moon)
+	if (destBtns[0].classList.contains('header__dest-btn--active')) {
+		planetInfo(dest.moon)
 	}
-	if (destBtns[1].classList.contains('header__dest-btn--active')){
+	if (destBtns[1].classList.contains('header__dest-btn--active')) {
 		planetInfo(dest.mars)
 	}
-	if (destBtns[2].classList.contains('header__dest-btn--active')){
+	if (destBtns[2].classList.contains('header__dest-btn--active')) {
 		planetInfo(dest.europa)
 	}
 	if (destBtns[3].classList.contains('header__dest-btn--active')) {
